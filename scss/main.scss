@@ -1,0 +1,113 @@
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+@import 'base/animations';
+@import 'base/config';
+@import 'base/typography';
+@import 'base/utilities';
+
+@import 'pages/home';
+
+
+.header {
+  height: 95vh;
+  background: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg) top;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+  position: relative;
+
+  &__logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+  }
+
+  &__logo {
+    height: 50px;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+
+  &--main {
+    font-size: 5rem;
+    letter-spacing: 2rem;
+    display: block;
+    font-weight: 400;
+    animation: moveInLeft 1.5s ease-in-out;
+  }
+
+  &--sub {
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    display: block;
+    font-weight: 600;
+    animation: moveInRight 1.5s ease-in-out;
+  }
+}
+
+.btn:any-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color-black;
+  padding: 1.5rem 0.5rem;
+  display: inline-block;
+  width: 30%;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba($color-black, 0.6);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 10px rgba($color-black, 0.6);
+}
+
+.btn--white {
+  background-color: $color-white;
+  color: $color-grey-dark;
+  border-radius: 100px;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  background-color: $color-white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.2s;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.3) scaleY(1.5);
+  opacity: 0;
+}
+
+.btn--animated {
+  animation: moveToUp 0.5s ease-in-out 0.7s backwards;
+}
