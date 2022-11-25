@@ -9,6 +9,11 @@
 
 @import 'pages/home';
 
+@import 'components/composition';
+@import 'components/feature-box';
+@import 'components/tour-card';
+@import 'components/btn';
+
 
 .header {
   height: 95vh;
@@ -19,6 +24,7 @@
     ),
     url(../img/hero.jpg) top;
   background-size: cover;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
   position: relative;
 
@@ -63,51 +69,3 @@
   }
 }
 
-.btn:any-link {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: $color-black;
-  padding: 1.5rem 0.5rem;
-  display: inline-block;
-  width: 30%;
-  position: relative;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba($color-black, 0.6);
-}
-
-.btn:active {
-  transform: translateY(1px);
-  box-shadow: 0 5px 10px rgba($color-black, 0.6);
-}
-
-.btn--white {
-  background-color: $color-white;
-  color: $color-grey-dark;
-  border-radius: 100px;
-}
-
-.btn::after {
-  content: "";
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  border-radius: 100px;
-  background-color: $color-white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.2s;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.3) scaleY(1.5);
-  opacity: 0;
-}
-
-.btn--animated {
-  animation: moveToUp 0.5s ease-in-out 0.7s backwards;
-}

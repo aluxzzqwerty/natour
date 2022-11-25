@@ -1,0 +1,32 @@
+.feature-box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 8rem;
+    
+
+  &__card {
+    max-width: 20%;
+    height: auto;
+    border-radius: 3px;
+    background-color: rgba($color-white, 0.8);
+    box-shadow: 0 15px 40px rgba($color-black, 0.5);
+    font-size: 1rem;
+    padding: 2rem;
+    text-align: center;
+    @include transition-ease;
+
+    &:hover {
+        transform: translateY(-20px) scale(1.03);
+    }
+  }
+
+  &__icon {
+    font-size: 4rem;
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
