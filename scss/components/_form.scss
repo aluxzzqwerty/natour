@@ -1,0 +1,108 @@
+.form {
+    &__group {
+        margin: 2rem 0;
+    }
+
+    &__input {
+        font-size: 1rem;
+        padding: 13px 17px;
+        border-radius: 2px;
+        font-family: inherit;
+        background-color: rgba($color-white, 0.5);
+        border: none;
+        display: block;
+        width: 45%;
+
+        @include respond(tab-port) {
+            width: 55%;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid $color-primary;
+            box-shadow: 0 10px 20px rgba($color-black, 0.1);
+        }
+
+        &::-webkit-input-placeholder {
+            color: #999;
+        }
+
+        &:focus:invalid {
+            border-bottom: 2px solid $color-secondary-dark;
+        }
+    }
+
+    &__label {
+        font-size: 0.8rem;
+        font-weight: 700;
+        display: block;
+        margin-top: 7px;
+        margin-left: 1rem;
+        @include transition-ease;
+    }
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-40px);
+    }
+
+    &__radio-group {
+        width: 20%;
+        display: inline-block;
+
+        @include respond(tab-port) {
+            width: 70%;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__radio-input {
+        display: none;
+    }
+
+    &__radio-label {
+        font-size: 1.2rem;
+        cursor: pointer;
+        position: relative;
+        padding-left: 2.5rem;
+
+        @include respond(tab-port) {
+            padding-left: 3rem;
+        }
+    }
+
+    &__radio-button {
+        width: 30px;
+        height: 30px;
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        top: -5px;
+        left: 0;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: $color-primary;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+    }
+
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+}

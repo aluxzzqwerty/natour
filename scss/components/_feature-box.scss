@@ -2,22 +2,40 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    padding: 8rem;
-    
+    padding: 4rem;
+
+    @include respond(tab-land) {
+      justify-content: space-around;
+    }
+
+    @include respond(phone) {
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center;
+    }
+  
 
   &__card {
-    max-width: 20%;
-    height: auto;
+    max-width: 22%;
     border-radius: 3px;
     background-color: rgba($color-white, 0.8);
     box-shadow: 0 15px 40px rgba($color-black, 0.5);
     font-size: 1rem;
     padding: 2rem;
+    margin: 2rem 0;
     text-align: center;
     @include transition-ease;
 
-    &:hover {
+    &:hover, &:focus {
         transform: translateY(-20px) scale(1.03);
+    }
+
+    @include respond(tab-land) {
+      max-width: 35%;
+    }
+
+    @include respond(phone) {
+      max-width: 100%;
     }
   }
 

@@ -14,7 +14,7 @@
         cursor: pointer;
     }
     
-    &:hover {
+    &:hover, &:focus {
         transform: translateY(-3px);
         box-shadow: 0 10px 20px rgba($color-black,.2);
 
@@ -82,7 +82,7 @@
         transition: all .2s;
     }
 
-    &:hover {
+    &:hover, &:focus {
         background-color: $color-primary;
         color: $color-white;
         box-shadow: 0 10px 20px rgba($color-black, .15);

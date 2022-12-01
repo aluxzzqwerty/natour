@@ -1,0 +1,82 @@
+.stories-box {
+    margin-top: 5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.story {
+    width: 65%;
+    box-shadow: 0 20px 40px rgba($color-black, 0.2);
+    background-color: rgba($color-white, 0.5);
+    padding: 4rem;
+    border-radius: 3px;
+    transform: skew(-12deg);
+
+    @include respond(phone) {
+        transform: skew(0);
+    }
+
+    @include phone-small {
+        width: 95%;
+        padding: 3rem;
+    }
+
+    &__shape {
+        width: 150px;
+        height: 150px;
+        float: left;
+        background-color: pink;
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        transform: translateX(-25px) skew(12deg);
+        position: relative;
+
+        @include respond(phone) {
+            transform: translateX(-25px) skew(0);
+        }
+    }
+
+    &__image {
+        height: 100%;
+        transform: scale(1.4);
+        transition: all 0.5s;
+    }
+
+    &__text {
+        transform: skew(12deg);
+
+        @include respond(phone) {
+            transform: skew(0);
+        }
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.5s;
+    }
+
+    &:hover &__caption,
+    &:focus &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__image,
+    &:focus &__image {
+        transform: scale(1);
+        filter: blur(3px) brightness(80%);
+    }
+}
