@@ -24,12 +24,7 @@
 
     @include respond(phone) {
       top: 20px;
-      right: 40px;
-    }
-
-    @include phone-small {
-      top: 20px;
-      right: 130px;
+      right: 20px;
     }
   }
 
@@ -54,12 +49,7 @@
 
     @include respond(phone) {
       top: 20px;
-      right: 40px;
-    }
-
-    @include phone-small {
-      top: 20px;
-      right: 135px;
+      right: 25px;
     }
   }
 

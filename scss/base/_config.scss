@@ -8,6 +8,7 @@
 
 html {
   font-size: 100%;
+  overflow-x: hidden;
 
   @include respond(tab-land) {
     font-size: 80%;
@@ -28,8 +29,13 @@ body {
   line-height: 1.7;
   color: $color-grey-dark;
   padding: 3rem;
+  
 
   @include respond(tab-port) {
     padding: 0;
+  }
+
+  @include phone-small {
+    overflow-x: hidden;
   }
 }
